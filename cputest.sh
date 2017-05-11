@@ -1,5 +1,5 @@
 #!/bin/bash
-#base on the proposed solution by user Fidel at
+#based on the proposed solution by user Fidel at
 #http://stackoverflow.com/questions/23367857/accurate-calculation-of-cpu-usage-given-in-percentage-in-linux/23376195
 
 sleepDurationSeconds=$1
