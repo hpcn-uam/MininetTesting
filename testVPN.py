@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 """ Script that tests RTT in a mininet deployment with IPSEC tunnels
+/etc directory content  must be copied to host's local /etc directory before executing the script.
 Usage: ./test_VPN.py [Options]
 Available options:
 * '-v', '--verbose': provide higher detail for logs
