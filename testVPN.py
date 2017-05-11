@@ -42,12 +42,12 @@ class SingleSwitchTopo(Topo):
 			linkopts = dict(bw=20)
 			self.addLink(host, switch,**linkopts)
 		
-		hostFinal=self.addHost('endHost',privateDirs=privateDirs)
+		endHost=self.addHost('endHost',privateDirs=privateDirs)
 		gateway=self.addHost('gateway',privateDirs=privateDirs)
 		linkopts = dict(bw=1000)
 		self.addLink(switch, gateway,**linkopts)
 		self.addLink(gateway, switchOut,**linkopts)
-		self.addLink(hostFinal, switchOut,**linkopts)
+		self.addLink(endHost, switchOut,**linkopts)
 
 
 
@@ -99,8 +99,8 @@ def configureHosts(net,n=2):
 	intf = gateway.intf('gateway-eth1')
 	intf.setIP(subnetgw2)
 	
-	hostFinal = net.get('endHost')
-	intf = hostFinal.intf('hostFinal-eth0')
+	endHost = net.get('endHost')
+	intf = endHost.intf('endHost-eth0')
 	intf.setIP('10.0.0.2/8')
 	
 	#create ipsec.conf file for gw
